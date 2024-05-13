@@ -100,7 +100,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
+                <!-- <form class="d-none d-md-flex ms-4">
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
@@ -178,7 +178,7 @@
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </nav>
             <!-- Navbar End -->
 
@@ -264,86 +264,130 @@
                         <div class="container-fluid pt-4 px-4 h-200">
                             <section id="hospital-selection" class="bg-secondary text-center rounded p-4">
                                 <h2 class="mb-4">Select a Hospital</h2>
-                                <div class="flex justify-center">
-                                    <div class="container text-center">
-                                        <div class="form-group row mb-4">
-                                            <label for="state" class="col-sm-1 col-form-label p-0">State:</label>
-                                            <div class="col-sm-2 mx-auto"> <!-- Centering the column -->
-                                                <select id="state" name="state" required class="form-select form-select-sm w-full">
-                                                    <option value="">Select State</option>
-                                                    <option value="state1">State 1</option>
-                                                    <option value="state2">State 2</option>
-                                                    <!-- Add more options as needed -->
-                                                </select>
-                                            </div>
+                                <div class="container text-center">
+                                    <div class="form-group row mb-4">
+                                        <label for="state" class="col-sm-1 col-form-label text-end">State:</label>
+                                        <div class="col-sm-2 mx-auto">
+                                            <select id="state" name="state" required class="form-select form-select-sm w-full">
+                                                <option value="">Select</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <!-- <option value="Maharashtra">Maharashtra</option> -->
+                                                <!-- Add more options as needed -->
+                                            </select>
                                         </div>
-                                        <div class="form-group row mb-4">
-                                            <label for="city" class="col-sm-1 col-form-label">City:</label>
-                                            <div class="col-sm-2 mx-auto"> <!-- Centering the column -->
-                                                <select id="city" name="city" required class="form-select form-select-sm w-full">
-                                                    <option value="">Select City</option>
-                                                    <option value="city1">City 1</option>
-                                                    <option value="city2">City 2</option>
-                                                    <!-- Add more options as needed -->
-                                                </select>
-                                            </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
+                                        <label for="city" class="col-sm-1 col-form-label text-end">City:</label>
+                                        <div class="col-sm-2 mx-auto">
+                                            <select id="city" name="city" required class="form-select form-select-sm w-full">
+                                                <option value="">Select</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
-                                </div>
-                                
                                 <button id="search-hospitals" class="btn btn-primary mb-4">Search Hospitals</button>
-                                <div id="hospital-list"></div>
+                                <div id="hospital-list" class="flex justify-center flex-wrap"></div> <!-- Use flex-wrap for horizontal alignment -->
                             </section>
-                            
+                        <!-- cards 3/4 -->
                             <script>
+                                var hospitals = [
+                                    { name: "Hospital 1", city: "Bhopal", beds: 100, image: "bhopal-care-hospital-bhopal-5c9dbaa54822a.jpg", page: "doctorselection1.html" },
+                                    { name: "Hospital 2", city: "Indore", beds: 150, image: "indore-about01-1.png", page: "doctorsel2.html" },
+                                    { name: "Hospital 3", city: "Surat", beds: 200, image: "about-us-surat.jpg", page: "hospital3.html" },
+                                    { name: "Hospital 4", city: "Ahmedabad", beds: 120, image: "hospital4.jpeg", page: "hospital4.html" },
+                                    // { name: "Hospital 5", city: "Mumbai", beds: 180, image: "hospital5.jpeg", page: "hospital5.html" },
+                                    // { name: "Hospital 6", city: "Pune", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    { name: "Hospital 7", city: "Bhopal", beds: 220, image: "26_06_2020-jp_hospital_bhopal_medical_test_2020626_8054.jpg", page: "docsel3.html" },
+                                    { name: "Hospital 8", city: "Bhopal", beds: 220, image: "PARUL-HOSPITAL-BHOPAL-15-scaled.jpg", page: "docsel4.html" },
+                                    { name: "Hospital 9", city: "Indore", beds: 220, image: "apollo-indore-2.jpg", page: "docsel5.html" },
+                                    // { name: "Hospital 10", location: "Location 6", city: "Indore", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    { name: "Hospital 11", city: "Pune", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    { name: "Hospital 12", city: "Surat", beds: 220, image: "Unity-Hospital_-Surat.jpg", page: "hospital6.html" },
+                                    { name: "Hospital 13", city: "Surat", beds: 220, image: "shalby-surat.jpg", page: "hospital6.html" },
+                                    { name: "Hospital 14", city: "Ahmedabad", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    { name: "Hospital 15", city: "Ahmedabad", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    // { name: "Hospital 16", city: "Mumbai", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    // { name: "Hospital 17", city: "Mumbai", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" },
+                                    // { name: "Hospital 18", city: "Pune", beds: 220, image: "hospital6.jpeg", page: "hospital6.html" }
+                                    // Add more hospitals with different cities as needed
+                                ];
+                        
+                                document.getElementById('state').addEventListener('change', function() {
+                                    var state = this.value;
+                                    var cityDropdown = document.getElementById('city');
+                                    cityDropdown.innerHTML = ''; // Clear previous options
+                        
+                                    // Populate cities based on the selected state
+                                    switch(state) {
+                                        case 'Madhya Pradesh':
+                                            addOption(cityDropdown, 'Bhopal', 'Bhopal');
+                                            addOption(cityDropdown, 'Indore', 'Indore');
+                                            break;
+                                        case 'Gujarat':
+                                            addOption(cityDropdown, 'Surat', 'Surat');
+                                            addOption(cityDropdown, 'Ahmedabad', 'Ahmedabad');
+                                            break;
+                                        case 'Maharashtra':
+                                            addOption(cityDropdown, 'Mumbai', 'Mumbai');
+                                            addOption(cityDropdown, 'Pune', 'Pune');
+                                            break;
+                                        // Add cases for other states as needed
+                                        default:
+                                            addOption(cityDropdown, 'Select', '');
+                                            break;
+                                    }
+                                });
+                        
                                 document.getElementById("search-hospitals").addEventListener("click", function () {
                                     var state = document.getElementById("state").value;
                                     var city = document.getElementById("city").value;
-                                    
-                                    // You can replace this with actual data fetching based on state and city
-                                    var hospitals = [
-                                        { name: "Hospital 1", location: "Location 1", beds: 100, image: "hospital1.jpeg", page: "doctorselection.html" },
-                                        { name: "Hospital 2", location: "Location 2", beds: 150, image: "hospital2.jpeg", page: "hospital2.html" },
-                                        { name: "Hospital 3", location: "Location 3", beds: 200, image: "hospital3.jpeg", page: "hospital3.html" }
-                                    ];
-                                    
+                        
+                                    // Filter hospitals based on selected city
+                                    var filteredHospitals = hospitals.filter(function(hospital) {
+                                        return hospital.city === city;
+                                    });
+                        
                                     var hospitalList = document.getElementById("hospital-list");
                                     hospitalList.innerHTML = ""; // Clear previous results
-                                    
-                                    hospitals.forEach(function (hospital) {
-                                        var card = document.createElement("div");
-                                        card.classList.add("card", "mb-3");
-                                        card.innerHTML = `
-                                            <a href="${hospital.page}">
-                                                <img src="${hospital.image}" class="card-img-top" alt="${hospital.name}">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${hospital.name}</h5>
-                                                    <p class="card-text">Location: ${hospital.location}</p>
-                                                    <p class="card-text">Beds Available: ${hospital.beds}</p>
-                                                </div>
-                                            </a>
+                        
+                                    filteredHospitals.forEach(function (hospital) {
+                                        var cardContainer = document.createElement("div"); // Create a container for each card
+                                        cardContainer.classList.add("mx-2", "mb-3"); // Apply margin to each container
+                                        cardContainer.innerHTML = `
+                                            <div class="card">
+                                                <a href="${hospital.page}">
+                                                    <img src="${hospital.image}" class="card-img-top" alt="${hospital.name}">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">${hospital.name}</h5>
+                                                        <p class="card-text">Beds Available: ${hospital.beds}</p>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         `;
-                                        hospitalList.appendChild(card);
+                                        hospitalList.appendChild(cardContainer); // Append the container to the hospital list
                                     });
                                 });
+                        
+                                function addOption(selectElement, text, value) {
+                                    var option = document.createElement('option');
+                                    option.text = text;
+                                    option.value = value;
+                                    selectElement.add(option);
+                                }
                             </script>
-                            
-                            
-                            
                         </div>
                         
-                        <div class="container-fluid pt-4 px-4 h-200">
+                        
+                        <!-- <div class="container-fluid pt-4 px-4 h-200">
                             <section id="doctor-selection" class="bg-secondary text-center rounded p-4" style="display: none;">
                                 <h2 class="mb-4">Select a Doctor Specialty</h2>
                                 <div id="specialty-list"></div>
                                 <div id="doctor-list"></div>
                             </section>
-                        </div>
+                        </div> -->
                         
-                        <div class="container-fluid pt-4 px-4 h-200">
+                        <!-- <div class="container-fluid pt-4 px-4 h-200">
                             <section id="appointment-booking" class="bg-secondary text-center rounded p-4" style="display: none;">
                                 <h2 class="mb-4">Book an Appointment</h2>
                                 <div id="doctor-info"></div>
@@ -359,68 +403,7 @@
                                     <button type="submit" class="btn btn-primary">Book Appointment</button>
                                 </form>
                             </section>
-                        </div>
-                        
-                        <!-- <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table> -->
+                        </div> -->
                     </div>
                 </div>
             </div>

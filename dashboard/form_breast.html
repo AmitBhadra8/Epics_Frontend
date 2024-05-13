@@ -59,8 +59,7 @@
                     </div>
                 </div> -->
                 <div class="navbar-nav w-100">
-                    <a href="hospital selection.html" class="nav-item nav-link">
-                        Hospital Selection</a>
+                    <a href="hospital selection.html" class="nav-item nav-link">Hospital Selection</a>
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -69,10 +68,8 @@
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div> -->
-                    <a href="search engine.html" class="nav-item nav-link">
-                        Search Engine</a>
-                    <a href="disease prediction.html" class="nav-item nav-link active" text-align="Right">
-                        Disease Prediction</a>
+                    <a href="search engine.html" class="nav-item nav-link">Search Engine</a>
+                    <a href="disease prediction.html" class="nav-item nav-link active" text-align="Right">Disease Prediction</a>
                     <!-- <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> -->
                     <!-- <div class="nav-item dropdown">
@@ -257,216 +254,92 @@
             <div class="container-fluid pt-4 px-4 h-100">
                 <div class="bg-secondary text-center rounded p-4">
                     <!-- <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
+                        <h6 class="mb-0">Recent Sales</h6>
                         <a href="">Show All</a>
                     </div> -->
                     <div class="table-responsive">
-                        <script>
-                            function redirectToForm(imageName) {
-                                // Define the form page URLs for each image
-                                var formPages = {
-                                    "heart_disease.png": "form_heart.html",
-                                    "breast-cancer.png": "form_breast.html",
-                                    "liver.png": "form_liver.html",
-                                    "diabetes.png": "form_diabetes.html",
-                                    "kidney.png": "form_kidney.html"
-                                    // Add more image names and form page URLs as needed
-                                };
-                                
-                                // Get the form page URL for the corresponding image name
-                                var formPage = formPages[imageName];
-                                
-                                // Redirect to the form page
-                                if (formPage) {
-                                    window.location.href = formPage;
-                                } else {
-                                    alert("Form not found for the selected image.");
-                                }
-                            }
-                        </script>
-                        
-                        <div class="container-fluid pt-4 px-4">
-                            <section id="hospital-selection" class="bg-secondary text-center rounded p-4">
-                                <h2 class="mb-4">Disease Prediction</h2>
-                                <div class="row justify-content-center">
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <img src="heart_disease.png" alt="Disease Image 1" class="mb-2 img-fluid" style="height: 200px; width: 200px; object-fit: cover;" onclick="redirectToForm('heart_disease.png')">
-                                                <p>Heart Disease</p>
-                                            </div>
-                                        </div>
+                        <div class="container-fluid pt-4 px-4 h-200">
+                            <section id="medicine-search" class="bg-secondary text-center rounded p-4">
+                                <h2 class="mb-4">Breast Cancer Prediction</h2>
+                                <h6 class="mb-4">Please enter the patient details</h6>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="chest-pain-type" class="form-label">Clump Thickness</label>
+                                        <input type="text" id="chest-pain-type" name="chest-pain-type" required class="form-control" placeholder="">
                                     </div>
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <img src="breast-cancer.png" alt="Disease Image 2" class="mb-2 img-fluid" style="height: 200px; width: 200px; object-fit: cover;" onclick="redirectToForm('breast-cancer.png')">
-                                                <p>Breast Cancer</p>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="thalassemia" class="form-label">Uniform Cell Size</label>
+                                        <input type="text" id="thalassemia" name="thalassemia" required class="form-control" placeholder="">
                                     </div>
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <img src="kidney.png" alt="Disease Image 3" class="mb-2 img-fluid" style="height: 200px; width: 200px; object-fit: cover;" onclick="redirectToForm('kidney.png')">
-                                                <p>Kidney Disease</p>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="num-vessels" class="form-label">Uniform Cell Shape</label>
+                                        <input type="text" id="num-vessels" name="num-vessels" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="st-depression" class="form-label">Marginal Adhesion</label>
+                                        <input type="text" id="st-depression" name="st-depression" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="st-depression" class="form-label">Single Epithelial Cell Size</label>
+                                        <input type="text" id="st-depression" name="st-depression" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="st-depression" class="form-label">Bare Nuclei</label>
+                                        <input type="text" id="st-depression" name="st-depression" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="st-depression" class="form-label">Bland Chlomatin</label>
+                                        <input type="text" id="st-depression" name="st-depression" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="st-depression" class="form-label">Normal Nucleoli</label>
+                                        <input type="text" id="st-depression" name="st-depression" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="st-depression" class="form-label">Mitosis</label>
+                                        <input type="text" id="st-depression" name="st-depression" required class="form-control" placeholder="">
+                                    </div>
+                                    <div class="col-md-12 mb-4">
+                                        <button id="predict-button" class="btn btn-primary">Predict</button>
                                     </div>
                                 </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <img src="diabetes.png" alt="Disease Image 4" class="mb-2 img-fluid" style="height: 200px; width: 200px; object-fit: cover;" onclick="redirectToForm('diabetes.png')">
-                                                <p>Diabetes</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-4">
-                                        <div class="card">
-                                            <div class="card-body text-center">
-                                                <img src="liver.png" alt="Disease Image 5" class="mb-2 img-fluid" style="height: 200px; width: 200px; object-fit: cover;" onclick="redirectToForm('liver.png')">
-                                                <p>Liver Disease</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </section>
-                        </div>
-                    </div>
-                    
-                        
-                        
-                        
                             
                             
-                            <!-- <script>
-                                document.getElementById("search-hospitals").addEventListener("click", function () {
-                                    var state = document.getElementById("state").value;
-                                    var city = document.getElementById("city").value;
+                            <script>
+                                document.getElementById("search-button").addEventListener("click", function () {
+                                    var problem = document.getElementById("problem-input").value;
                                     
-                                    // You can replace this with actual data fetching based on state and city
-                                    var hospitals = [
-                                        { name: "Hospital 1", location: "Location 1", beds: 100, image: "hospital1.jpg", page: "doctorselection.html" },
-                                        { name: "Hospital 2", location: "Location 2", beds: 150, image: "hospital2.jpg", page: "hospital2.html" },
-                                        { name: "Hospital 3", location: "Location 3", beds: 200, image: "hospital3.jpg", page: "hospital3.html" }
+                                    // You can replace this with actual data fetching based on the search query
+                                    var medicines = [
+                                        { name: "Medicine 1", description: "Description 1", uses: "Uses 1" },
+                                        { name: "Medicine 2", description: "Description 2", uses: "Uses 2" },
+                                        { name: "Medicine 3", description: "Description 3", uses: "Uses 3" }
                                     ];
                                     
-                                    var hospitalList = document.getElementById("hospital-list");
-                                    hospitalList.innerHTML = ""; // Clear previous results
+                                    var medicineList = document.getElementById("medicine-list");
+                                    medicineList.innerHTML = ""; // Clear previous results
                                     
-                                    hospitals.forEach(function (hospital) {
+                                    medicines.forEach(function (medicine) {
                                         var card = document.createElement("div");
                                         card.classList.add("card", "mb-3");
                                         card.innerHTML = `
-                                            <a href="${hospital.page}">
-                                                <img src="${hospital.image}" class="card-img-top" alt="${hospital.name}">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${hospital.name}</h5>
-                                                    <p class="card-text">Location: ${hospital.location}</p>
-                                                    <p class="card-text">Beds Available: ${hospital.beds}</p>
-                                                </div>
-                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">${medicine.name}</h5>
+                                                <p class="card-text">Description: ${medicine.description}</p>
+                                                <p class="card-text">Uses: ${medicine.uses}</p>
+                                            </div>
                                         `;
-                                        hospitalList.appendChild(card);
+                                        medicineList.appendChild(card);
                                     });
                                 });
-                            </script> -->
-                            
-                            
-                            
+                            </script>
                         </div>
-                        
-                        <div class="container-fluid pt-4 px-4 h-200">
-                            <section id="doctor-selection" class="bg-secondary text-center rounded p-4" style="display: none;">
-                                <h2 class="mb-4">Select a Doctor Specialty</h2>
-                                <div id="specialty-list"></div>
-                                <div id="doctor-list"></div>
-                            </section>
-                        </div>
-                        
-                        <div class="container-fluid pt-4 px-4 h-200">
-                            <section id="appointment-booking" class="bg-secondary text-center rounded p-4" style="display: none;">
-                                <h2 class="mb-4">Book an Appointment</h2>
-                                <div id="doctor-info"></div>
-                                <form id="appointment-form">
-                                    <div class="form-group mb-4">
-                                        <label for="appointment-date">Date:</label>
-                                        <input type="date" id="appointment-date" name="appointment-date" required class="form-control">
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label for="appointment-time">Time:</label>
-                                        <input type="time" id="appointment-time" name="appointment-time" required class="form-control">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Book Appointment</button>
-                                </form>
-                            </section>
-                        </div>
-                        
-                        <!-- <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
-                            </tbody>
-                        </table> -->
                     </div>
                 </div>
             </div>
+            
             <!-- Recent Sales End -->
 
 

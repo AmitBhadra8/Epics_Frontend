@@ -97,7 +97,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
+                <!-- <form class="d-none d-md-flex ms-4">
                     <input class="form-control bg-dark border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
@@ -175,7 +175,7 @@
                             <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </nav>
             <!-- Navbar End -->
 
@@ -192,51 +192,41 @@
                         <!-- Add more options as needed -->
                     </select>
                 </div>
-                <div class="form-group mb-4">
-                    <label for="city">City:</label>
-                    <select id="city" name="city" required class="form-select">
-                        <option value="">Select Hospital type</option>
-                        <option value="city1">Private Hospital</option>
-                        <option value="city2">Government Hospital</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
                 <button id="search-hospitals" class="btn btn-primary mb-4">Search Hospitals</button>
-                <div id="hospital-list"></div>
+                <div id="hospital-list" class="d-flex flex-nowrap overflow-auto"></div>
             </section>
             
             <script>
-                document.getElementById("search-hospitals").addEventListener("click", function () {
-                    var state = document.getElementById("state").value;
-                    var city = document.getElementById("city").value;
-                    
-                    // You can replace this with actual data fetching based on state and city
-                    var hospitals = [
-                        { name: "Doctor 1", location: "Location 1", beds: 100, image: "hospital1.jpg", page: "doctorselection.html" },
-                        { name: "Doctor 2", location: "Location 2", beds: 150, image: "hospital2.jpg", page: "hospital2.html" },
-                        { name: "Doctor 3", location: "Location 3", beds: 200, image: "hospital3.jpg", page: "hospital3.html" }
-                    ];
-                    
-                    var hospitalList = document.getElementById("hospital-list");
-                    hospitalList.innerHTML = ""; // Clear previous results
-                    
-                    hospitals.forEach(function (hospital) {
-                        var card = document.createElement("div");
-                        card.classList.add("card", "mb-3");
-                        card.innerHTML = `
-                            <a href="${hospital.page}">
-                                <img src="${hospital.image}" class="card-img-top" alt="${hospital.name}">
+                document.getElementById("search-hospitals").addEventListener("click", function() {
+                    var selectedDoctor = document.getElementById("state").value;
+                    var doctorsList = {
+                        "state1": [
+                            { name: " ", image: "   indian-doctor-care-generate-ai-photo.jpg", formLink: "https://docs.google.com/forms/yourform1" },
+                            { name: " ", image: "download.jpg", formLink: "https://docs.google.com/forms/yourform2" },
+                            { name: " ", image: "d2.jpg", formLink: "https://docs.google.com/forms/yourform3" }
+                        ],
+                        "state2": [
+                            { name: " ", image: "d3.jpg", formLink: "https://docs.google.com/forms/yourform4" },
+                            { name: " ", image: "a-mature-indian-male-doctor-on-a-white-background-ai-generated-photo.jpg", formLink: "https://docs.google.com/forms/yourform5" },
+                            { name: " ", image: "360_F_300220248_VKEd3QKx31kzqHcwZfnGmWKZLYTjf8R0.jpg", formLink: "https://docs.google.com/forms/yourform6" }
+                        ]
+                        // Add more doctors for each state as needed
+                    };
+                    var hospitalsHtml = "";
+                    doctorsList[selectedDoctor].forEach(function(doctor) {
+                        hospitalsHtml += `
+                            <div class="card mx-2" style="width: 18rem;">
+                                <img src="${doctor.image}" class="card-img-top" alt="${doctor.name}">
                                 <div class="card-body">
-                                    <h5 class="card-title">${hospital.name}</h5>
-                                    <p class="card-text">Location: ${hospital.location}</p>
-                                    <p class="card-text">Beds Available: ${hospital.beds}</p>
+                                    <h5 class="card-title">${doctor.name}</h5>
+                                    <a href="${doctor.formLink}" class="btn btn-primary">Book Appointment</a>
                                 </div>
-                            </a>
-                        `;
-                        hospitalList.appendChild(card);
+                            </div>`;
                     });
+                    document.getElementById("hospital-list").innerHTML = hospitalsHtml;
                 });
             </script>
+            
             <!-- Doctor end -->
 
 
